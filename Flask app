@@ -1,0 +1,22 @@
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        new_username = request.form.get("create_username")
+        
+        # Insert logic for login or user creation here
+        # Right now it just prints to the server console
+        if username and password:
+            print(f"Logging in with Username: {username} and Password: {password}")
+        if new_username:
+            print(f"Creating new user with Username: {new_username}")
+            
+    return render_template("login.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
