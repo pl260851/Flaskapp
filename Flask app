@@ -9,8 +9,7 @@ def index():
         password = request.form.get("password")
         new_username = request.form.get("create_username")
         
-        # Insert logic for login or user creation here
-        # Right now it just prints to the server console
+
         if username and password:
             print(f"Logging in with Username: {username} and Password: {password}")
         if new_username:
